@@ -38,11 +38,11 @@ ENV $(cat $ENV_FILE_PATH | xargs)
 CMD ["gunicorn", "app:app", "-b", "0.0.0.0:80", "--log-file", "-", "--access-logfile", "-", "--workers", "4", "--keep-alive", "0"]
 
 # Set environment variables for the vote service
-ENV REDIS_HOST=redis
-ENV REDIS_PORT=6379
-ENV REDIS_DB=0
-ENV OPTION_A=Cats
-ENV OPTION_B=Dogs
+ENV REDIS_HOST=${REDIS_HOST}
+ENV REDIS_PORT=${REDIS_PORT}
+ENV REDIS_DB=${REDIS_DB}
+ENV OPTION_A=${OPTION_A}
+ENV OPTION_B=${OPTION_B}
 
 # Specify the dependencies for the vote service (using HEALTHCHECK)
 HEALTHCHECK --interval=15s --timeout=5s --retries=3 --start-period=10s CMD curl -f http://localhost || exit 1
