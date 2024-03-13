@@ -11,7 +11,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Retrieve values from environment variables
-redis_host = 'redis-master.app.svc'  # Updated Redis host
+redis_host = os.getenv('REDIS_HOST', "redis-master")  # Updated Redis host
 redis_port = int(os.getenv('REDIS_PORT', 6379))
 redis_db = int(os.getenv('REDIS_DB', 0))
 option_a = os.getenv('OPTION_A', 'Cats')
