@@ -17,7 +17,7 @@ redis_db = int(os.getenv('REDIS_DB', 0))
 option_a = os.getenv('OPTION_A', 'Cats')
 option_b = os.getenv('OPTION_B', 'Dogs')
 redis_username = os.getenv('REDIS_USERNAME', "default")
-redis_password = os.getenv('REDIS_PASSWORD', "Aman123")
+redis_password = os.getenv('REDIS_PASSWORD', "redis")
 
 hostname = socket.gethostname()
 
